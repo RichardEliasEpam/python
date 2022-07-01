@@ -1,0 +1,54 @@
+# 1. Create a local folder and initialize it for git;
+git init
+
+# 2. Create a text file in the folder and commit it;
+echo "Hello" > file
+git add file
+git commit file -m 'Commit message 1'
+
+# 3. Create a remote repository on GitHub;
+git remote add github https://github.com/RichardEliasEpam/python
+
+# 4. Push the local repository to GitHub;
+git push github master
+
+# 5. Create a new branch (develop) and switch to it;
+git checkout -b develop
+
+# 6. Create a new branch from 'develop' and switch to it;
+git checkout -b my-new-branch
+
+# 7. Add the first line in the text file, commit, and push to remote;
+vim file
+git commit file -m 'commit 2'
+git push github
+
+# 8. Clone your repository from GitHub into a separate folder;
+git clone https://github.com/RichardEliasEpam/python ../test2
+
+# 9. Create another branch from 'develop' and switch to it using cloned project;
+git checkout develop
+git checkout -b other-branch
+
+#10. Add the first line of the text file (different from the first branch), commit, and push on remote;
+vim file
+git commit file -m 'commit 3'
+git push github
+    
+# 11. Switch to develop;
+git checkout develop
+
+# 12  Merge the first branch and push changes;
+git merge my-new-branch
+git push github
+
+# 13. Merge the second branch and push changes;
+vim file
+git add file
+git commit -m 'merge commit'
+
+14. Resolve conflict;
+16. Commit and push a separate text file with a list of all the commands, which were used to solve the problem;
+git add HW.txt
+git commit -a -m 'HW'
+git push github develop
